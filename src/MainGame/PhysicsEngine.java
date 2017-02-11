@@ -62,12 +62,15 @@ public class PhysicsEngine {
                         if( xOff == 0){
                             // PLAYER HIT LEFT SIDE OF OBJECT
                             player.x = player.x +xOverLap;
+                            player.dx = 0;
                         }else {
                             player.x = p.x - player.width;
+                            player.dx = 0;
                         }
                     } else {
                         if( yOff == 0){
                             player.y = player.y +yOverLap;
+                            player.dy = 0;
                         }else {
                             // PLAYER LANDED ON TOP
                             player.y = p.y - player.height;

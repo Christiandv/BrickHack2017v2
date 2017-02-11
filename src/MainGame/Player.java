@@ -15,15 +15,20 @@ package MainGame;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.*;
+import java.awt.Image;
 
 public class Player extends Sprite {
 
-    private int dx;
-    private int dy;
+    Image jumping, movingRight, movingLeft, idle;
+
+    public int dx;
+    public int dy;
     private int jumps;
 
     Timer right;
     Timer left;
+    boolean onGround = true;
+    boolean walking = false;
     public Player(int x, int y) {
         super(x, y);
 
@@ -31,11 +36,19 @@ public class Player extends Sprite {
     }
 
     private void init() {
-        loadImage("media/images/stickyJumping.gif");
+        loadImages();
+        image = idle;
         getImageDimensions();
         jumps = 2;
         right = new Timer(20, e -> {dx += 1;});
         left = new Timer( 20, e -> dx -= 1);
+    }
+
+    protected void loadImages() {
+        jumping = new ImageIcon("media/images/stickyJumping.gif").getImage();
+        movingLeft = new ImageIcon("media/images/stickyLeftWalk.gif").getImage();
+        movingRight = new ImageIcon("media/images/stickyRightWalk.gif").getImage();
+        idle = new ImageIcon("media/images/stickyIdle.gif").getImage();
     }
 
     public void move() {
@@ -50,9 +63,11 @@ public class Player extends Sprite {
         x += dx;
         y += dy;
 
+        if( Math.abs(dx) < 1 && !walking){
+            image = idle;
+        }
+
         dy  += 2;
-
-
         if (x < 1) {
             x = 1;
         }
@@ -77,21 +92,31 @@ public class Player extends Sprite {
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_SPACE) {
-//            jump
+            // jump
+            if( jumps > 0 && dy > -12){
+                jumps --;
+                dy = -20;
+            }
         }
 
         if (key == KeyEvent.VK_A) {
             left.start();
             right.stop();
-
+            if(onGround)
+                image = movingLeft;
+            walking = true;
         }
 
         if (key == KeyEvent.VK_D) {
             right.start();
             left.stop();
+            if(onGround)
+                image = movingRight;
+            walking = true;
         }
 
         if (key == KeyEvent.VK_W) {
+            // jump
             if( jumps > 0 && dy > -12){
                 jumps --;
                 dy = -20;
@@ -112,11 +137,12 @@ public class Player extends Sprite {
 
         if (key == KeyEvent.VK_A) {
             left.stop();
-
+            walking = false;
         }
 
         if (key == KeyEvent.VK_D) {
             right.stop();
+            walking = false;
         }
 
         if (key == KeyEvent.VK_W) {
@@ -131,5 +157,6 @@ public class Player extends Sprite {
         jumps = 2;
         dy = 0;
         dx *= .75;
+        onGround = true;
     }
 }
