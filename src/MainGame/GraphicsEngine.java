@@ -24,9 +24,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 
 public class GraphicsEngine extends JPanel implements ActionListener {
 
@@ -45,6 +52,11 @@ public class GraphicsEngine extends JPanel implements ActionListener {
         WIDTH = width;
         HEIGHT = height;
         initBoard();
+        JFXPanel fxPanel = new JFXPanel();
+        String bip = "media/music/Pixelland (end level song).mp3"; //move this
+        Media hit = new Media(Paths.get(bip).toUri().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(hit);
+        mediaPlayer.play();
     }
 
     private void initBoard() {
