@@ -15,29 +15,29 @@ import java.awt.EventQueue;
 import javax.swing.*;
 
 
-public class Application extends JFrame {
+public class Game extends JFrame {
 
 
-    private Application() {
+    private Game() {
 
         initUI();
     }
 
     private void initUI() {
         final int WIDTH = 700;
-        final int HEIGHT = 400;
+        final int HEIGHT = 440;
         add(new GraphicsEngine(WIDTH, HEIGHT));
 
         setSize(WIDTH, HEIGHT);
 
-        setTitle("Application");
+        setTitle("Game");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
-            Application ex = new Application();
+            Game ex = new Game();
             ex.setVisible(true);
         });
     }

@@ -84,7 +84,7 @@ public class GraphicsEngine extends JPanel implements ActionListener {
     //  draws all of the things
     private void drawObjects(Graphics g) {
 
-        g.setColor(Color.blue);
+        g.setColor(Color.white);
         g.fillRect(0,0,WIDTH,HEIGHT);
 
         Player player = physics.getPlayer();
