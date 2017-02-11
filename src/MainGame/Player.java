@@ -36,13 +36,23 @@ public class Player extends Sprite {
         x += dx;
         y += dy;
 
+        dy  += 2;
         if (x < 1) {
             x = 1;
+        }
+        if ( x > 700){
+            // WENT OFF THE RIGHT SIDE
         }
 
         if (y < 1) {
             y = 1;
         }
+        if( y + height> 400){
+            // FELL OFF THE BOTTOM
+            y = 400 - height;
+            dy = 0;
+        }
+
     }
 
     public void keyPressed(KeyEvent e) {
