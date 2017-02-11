@@ -14,12 +14,16 @@ package MainGame;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import javax.swing.*;
 
 public class Player extends Sprite {
 
     private int dx;
     private int dy;
+    private int jumps;
 
+    Timer right;
+    Timer left;
     public Player(int x, int y) {
         super(x, y);
 
@@ -29,14 +33,26 @@ public class Player extends Sprite {
     private void init() {
         loadImage("media/images/stickyJumping.gif");
         getImageDimensions();
+        jumps = 2;
+        right = new Timer(20, e -> {dx += 1;});
+        left = new Timer( 20, e -> dx -= 1);
     }
 
     public void move() {
-
+        if( Math.abs(dx) > 5){
+            if( dx < 0){
+                dx = -5;
+            }
+            if( dx > 0){
+                dx = 5;
+            }
+        }
         x += dx;
         y += dy;
 
         dy  += 2;
+
+
         if (x < 1) {
             x = 1;
         }
@@ -51,6 +67,7 @@ public class Player extends Sprite {
             // FELL OFF THE BOTTOM
             y = 400 - height;
             dy = 0;
+            landed();
         }
 
     }
@@ -64,19 +81,26 @@ public class Player extends Sprite {
         }
 
         if (key == KeyEvent.VK_A) {
-            dx = -4;
+            left.start();
+            right.stop();
+
         }
 
         if (key == KeyEvent.VK_D) {
-            dx = 4;
+            right.start();
+            left.stop();
         }
 
         if (key == KeyEvent.VK_W) {
-            dy = -4;
+            if( jumps > 0 && dy > -12){
+                jumps --;
+                dy = -20;
+            }
+
         }
 
         if (key == KeyEvent.VK_S) {
-            dy = 4;
+
         }
     }
 
@@ -87,19 +111,25 @@ public class Player extends Sprite {
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_A) {
-            dx = 0;
+            left.stop();
+
         }
 
         if (key == KeyEvent.VK_D) {
-            dx = 0;
+            right.stop();
         }
 
         if (key == KeyEvent.VK_W) {
-            dy = 0;
+
         }
 
         if (key == KeyEvent.VK_S) {
-            dy = 0;
+
         }
+    }
+    public void landed(){
+        jumps = 2;
+        dy = 0;
+        dx *= .75;
     }
 }

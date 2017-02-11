@@ -71,6 +71,7 @@ public class PhysicsEngine {
                         }else {
                             // PLAYER LANDED ON TOP
                             player.y = p.y - player.height;
+                            player.landed();
                         }
                     }
                 }
