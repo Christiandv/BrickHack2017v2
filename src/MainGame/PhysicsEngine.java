@@ -39,12 +39,40 @@ public class PhysicsEngine {
         playerCollisions();
     }
 
+    int yOverLap, xOverLap;
+    int yOff, xOff;
     public void playerCollisions(){
         for(Platform p : platforms){
             // you bee hitting a platform man
             if( p.getBounds().intersects(player.getBounds())){
                 if(p.isHard()){// idk maybe we want passable platforms
-
+                    xOff = player.width;
+                    yOff = player.height;
+                    xOverLap = (player.x+ player.width)- p.x;
+                    if( Math.abs(xOverLap) > Math.abs((p.x+p.width)-player.x )){
+                        xOverLap = (p.x+p.width)-player.x;
+                        xOff = 0;
+                    }
+                    yOverLap = (player.y+ player.height)- p.y;
+                    if( Math.abs(yOverLap) > Math.abs((p.y+p.height)-player.y) ){
+                        yOverLap = (p.y+p.height)-player.y;
+                        yOff = 0;
+                    }
+                    if( Math.abs(xOverLap)< Math.abs(yOverLap)){
+                        if( xOff == 0){
+                            // PLAYER HIT LEFT SIDE OF OBJECT
+                            player.x = player.x +xOverLap;
+                        }else {
+                            player.x = p.x - player.width;
+                        }
+                    } else {
+                        if( yOff == 0){
+                            player.y = player.y +yOverLap;
+                        }else {
+                            // PLAYER LANDED ON TOP
+                            player.y = p.y - player.height;
+                        }
+                    }
                 }
             }
         }

@@ -54,19 +54,19 @@ public class Player extends Sprite {
         }
 
         if (key == KeyEvent.VK_A) {
-            dx = -1;
+            dx = -4;
         }
 
         if (key == KeyEvent.VK_D) {
-            dx = 1;
+            dx = 4;
         }
 
         if (key == KeyEvent.VK_W) {
-            dy = -1;
+            dy = -4;
         }
 
         if (key == KeyEvent.VK_S) {
-            dy = 1;
+            dy = 4;
         }
     }
 
