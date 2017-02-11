@@ -57,6 +57,7 @@ public class GraphicsEngine extends JPanel implements ActionListener {
         Media hit = new Media(Paths.get(bip).toUri().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
+
     }
 
     private void initBoard() {
