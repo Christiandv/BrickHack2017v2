@@ -24,12 +24,14 @@ public class Sprite {
     protected int height;
     protected boolean vis;
     protected Image image;
+    public boolean hard;
 
     public Sprite(int x, int y) {
 
         this.x = x;
         this.y = y;
         vis = true;
+        hard = false;
     }
 
     protected void getImageDimensions() {
@@ -59,6 +61,10 @@ public class Sprite {
     public boolean isVisible() {
         return vis;
     }
+
+    public boolean isHard() { return hard; }
+
+    public void setHard() { hard = true; }
 
     public void setVisible(Boolean visible) {
         vis = visible;

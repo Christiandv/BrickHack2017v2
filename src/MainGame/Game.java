@@ -25,7 +25,7 @@ public class Game extends JFrame {
 
     private void initUI() {
         final int WIDTH = 700;
-        final int HEIGHT = 440;
+        final int HEIGHT = 460;
         add(new GraphicsEngine(WIDTH, HEIGHT -40));
 
         setSize(WIDTH, HEIGHT);

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class PhysicsEngine {
     Player player;
     ArrayList<Platform> platforms;
+    ArrayList<Couch> couches;
 
     private final int IPLAYER_X = 40;
     private final int IPLAYER_Y = 60;
@@ -29,7 +30,9 @@ public class PhysicsEngine {
         player = new Player(IPLAYER_X, IPLAYER_Y);
         platforms = new ArrayList<Platform>();
         platforms.add(new Platform(400,200));
+        couches = new ArrayList<Couch>();
     }
+
 
     public void update(){
         if (player.isVisible()) {
