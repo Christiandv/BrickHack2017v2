@@ -58,11 +58,7 @@ public class GraphicsEngine extends JPanel implements ActionListener {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         timer = new Timer(DELAY, this);
         initBoard();
-        JFXPanel fxPanel = new JFXPanel();
-        String bip = "media/music/Pixelland (end level song).mp3"; //move this
-        Media hit = new Media(Paths.get(bip).toUri().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(hit);
-        mediaPlayer.play();
+
 
     }
 

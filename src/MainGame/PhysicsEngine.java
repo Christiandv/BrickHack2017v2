@@ -12,10 +12,16 @@
 
 package MainGame;
 
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 import java.awt.event.KeyEvent;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class PhysicsEngine {
+public class PhysicsEngine
+{
     Player player;
     LevelMaker levelGen;
     boolean endGame = false;
@@ -35,6 +41,7 @@ public class PhysicsEngine {
         sprites = new ArrayList<Sprite>();
 
         sprites = levelGen.getLevel1();
+
     }
 
 

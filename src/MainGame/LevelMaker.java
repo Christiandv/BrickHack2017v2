@@ -4,6 +4,11 @@ package MainGame;
  * Created by Chris on 2/11/2017.
  */
 
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.nio.file.Paths;
 import java.util.ArrayList;
 public class LevelMaker {
 
@@ -14,6 +19,11 @@ public class LevelMaker {
     public ArrayList<Sprite> getLevel1(){
         ArrayList<Sprite> level = new ArrayList<Sprite>();
 
+        JFXPanel fxPanel = new JFXPanel();
+        String bip = "media/music/Pixelland (end level song).mp3"; //move this
+        Media hit = new Media(Paths.get(bip).toUri().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(hit);
+        mediaPlayer.play();
 
         //Begin hardcoding
         level.addAll(new Couch(10, 313).getSprites());
