@@ -12,7 +12,7 @@ public class Background extends Sprite{
 
     public void init(){
         hard = false;
-        loadImage("media/images/background.png");
+        loadImage("media/images/wallPost.png");
         setImageDimensions();
     }
 }
