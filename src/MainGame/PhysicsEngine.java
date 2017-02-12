@@ -87,6 +87,9 @@ public class PhysicsEngine
     public void playerCollisions()
     {
         for(Sprite p : sprites) {
+            if (p instanceof Chandelier){
+                ((Chandelier) p).update();
+            }
             // you bee hitting a platform man
             if (p.getBounds().intersects(player.getBounds())) {
 
@@ -149,6 +152,10 @@ public class PhysicsEngine
                             }
                             if (p instanceof Table){
                                 ((Table) p).down = 10;
+                            }
+                            if (p instanceof Chandelier){
+                                if(((Chandelier) p).fall == -1)
+                                    ((Chandelier) p).fall = 15;
                             }
                         }
                     }
@@ -221,6 +228,7 @@ public class PhysicsEngine
             if (p instanceof Table){
                 ((Table) p).update();
             }
+
         }
     }
     public Player getPlayer()
