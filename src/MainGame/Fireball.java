@@ -15,7 +15,7 @@ public class Fireball extends Sprite{
 
         hurts = true;
         hard = true;
-        loadImage("media/images/fireballTest.gif");
+        loadImage("media/images/fireball.gif");
         setImageDimensions();
     }
 }
