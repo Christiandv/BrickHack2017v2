@@ -94,6 +94,9 @@ public class GraphicsEngine extends JPanel implements ActionListener {
         {
             drawObjects(g);
         }
+        else if (!ingame && physics.wonGame){
+            drawGameWin(g);
+        }
         else
         {
             drawGameOver(g);
@@ -151,6 +154,27 @@ public class GraphicsEngine extends JPanel implements ActionListener {
         g.drawString(msg, (WIDTH - fm.stringWidth(msg)) / 2,
                 HEIGHT / 2 + 50);
     }
+
+    private void drawGameWin (Graphics g) {
+
+        String msg = "YOU WIN (yay pie!)";
+        Font font = new Font("Helvetica", Font.BOLD, 50);
+        FontMetrics fm = getFontMetrics(font);
+
+        g.setColor(Color.yellow);
+        g.setFont(font);
+        g.drawString(msg, (WIDTH - fm.stringWidth(msg)) / 2,
+                HEIGHT / 2);
+        msg = "Press Enter to restart";
+        font = new Font("Helvetica", Font.BOLD, 30);
+        fm = getFontMetrics(font);
+
+        g.setColor(Color.white);
+        g.setFont(font);
+        g.drawString(msg, (WIDTH - fm.stringWidth(msg)) / 2,
+                HEIGHT / 2 + 50);
+    }
+
 
     // update function
     @Override
