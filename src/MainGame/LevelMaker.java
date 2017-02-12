@@ -33,6 +33,7 @@ public class LevelMaker {
         level.add(new Background(1280,0));
         level.add(new Background(1920,0));
         level.add(new Background(2560, 0));
+        level.add(new Background(3200,0));
 
         //Begin hardcoding
         level.addAll(new Couch(10, 313).getSprites());
@@ -75,6 +76,10 @@ public class LevelMaker {
         level.add(new Stool(2770, 345));
         level.add(new Bookcase(2965, 300));
 
+        //We transfer to the kitchen
+        level.add(new Cookie(3250, 320));
+        level.add(new Table(3225, 345));
+        level.add(new Countertop(3575, 315));
 
 
         for(int i = 0; i < 10; i++){

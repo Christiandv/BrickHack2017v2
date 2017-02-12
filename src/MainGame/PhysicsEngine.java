@@ -187,7 +187,9 @@ public class PhysicsEngine
             if (p instanceof Stool) {
                 ((Stool) p).update();
             }
-
+            if (p instanceof Table){
+                ((Table) p).update();
+            }
         }
     }
     public Player getPlayer()
