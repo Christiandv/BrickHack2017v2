@@ -19,6 +19,8 @@ public class PhysicsEngine {
     Player player;
     LevelMaker levelGen;
 
+    int scroll = 0;
+
     ArrayList<Sprite> sprites;
 
     private final int IPLAYER_X = 160;
@@ -47,8 +49,22 @@ public class PhysicsEngine {
         if (player.isVisible()) {
             player.move();
         }
+        handleScroll();
         //collisions
         playerCollisions();
+    }
+
+    public void handleScroll(){
+        if( player.x+ player.width> scroll + 550){
+            scroll = player.x + player.width - 550;
+        }
+        if( player.x < scroll + 150){
+            scroll = player.x  - 150;
+        }
+
+        if( scroll < 0 ){
+            scroll = 0;
+        }
     }
 
     int yOverLap, xOverLap;
