@@ -34,7 +34,7 @@ public class Sprite {
         hard = false;
     }
 
-    protected void getImageDimensions() {
+    protected void setImageDimensions() {
 
         width = image.getWidth(null);
         height = image.getHeight(null);

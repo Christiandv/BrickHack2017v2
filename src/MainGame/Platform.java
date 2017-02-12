@@ -24,6 +24,6 @@ public class Platform extends Sprite
     public void init(){
         hard = true;
         loadImage("media/images/platform.png");
-        getImageDimensions();
+        setImageDimensions();
     }
 }

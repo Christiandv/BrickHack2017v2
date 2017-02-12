@@ -31,6 +31,7 @@ public class PhysicsEngine {
         platforms = new ArrayList<Platform>();
         platforms.add(new Platform(400,200));
         couches = new ArrayList<Couch>();
+        couches.add(new Couch(10, 413));
     }
 
 
@@ -90,6 +91,9 @@ public class PhysicsEngine {
     }
     public ArrayList<Platform> getPlatforms(){
         return platforms;
+    }
+    public ArrayList<Couch> getCouches(){
+        return couches;
     }
 
     public void keyPressed(KeyEvent e) {

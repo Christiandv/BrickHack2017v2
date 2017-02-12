@@ -38,7 +38,7 @@ public class Player extends Sprite {
     private void init() {
         loadImages();
         image = idle;
-        getImageDimensions();
+        setImageDimensions();
         jumps = 2;
         right = new Timer(20, e -> {dx += 1;  if(onGround) image = movingRight;});
         left = new Timer( 20, e -> {dx -= 1;  if(onGround) image = movingLeft;});
