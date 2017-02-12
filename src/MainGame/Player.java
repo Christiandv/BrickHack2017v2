@@ -52,8 +52,8 @@ class Player extends Sprite {
             movingRight = new ImageIcon("media/images/stickyRightWalkSauce.gif").getImage();
             idle = new ImageIcon("media/images/stickyIdleSauce.gif").getImage();
         }
-        else
-        {
+        else {
+
             jumping = new ImageIcon("media/images/stickyJumping.gif").getImage();
             movingLeft = new ImageIcon("media/images/stickyLeftWalk.gif").getImage();
             movingRight = new ImageIcon("media/images/stickyRightWalk.gif").getImage();

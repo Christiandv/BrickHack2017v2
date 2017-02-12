@@ -90,6 +90,7 @@ public class PhysicsEngine
                     if (player.powerup && player.type == "pan") {
                         player.type = "none";
                         player.powerup = false;
+                        player.loadImages();
                         player.jump();
                         endGame = false;
                     } else {
@@ -164,6 +165,7 @@ public class PhysicsEngine
                                 if (p.isVisible()) {
                                     player.powerup = true;
                                     player.type = "pan";
+                                    player.loadImages();
                                 }
                                 p.setVisible(false);
                                 break;
