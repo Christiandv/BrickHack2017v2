@@ -17,7 +17,6 @@ import java.util.ArrayList;
 public class Chair{
     Sprite chairBack;
     Sprite chairLegs;
-
     public Chair(int x, int y){
         chairBack = new Sprite(x + 49, y - 27);
         chairLegs = new Sprite(x, y + 46);
