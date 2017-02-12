@@ -19,7 +19,13 @@ public class LevelMaker {
         level.addAll( new Couch(10, 313).getSprites());
         level.addAll(new Chair(308,312).getSprites());
         level.add(new Shelf(425, 270));
-        level.add(new Bookcase(540, 271));
+        level.add(new Bookcase(600, 271));
+
+        //Begin stools
+        level.add(new Stool(800, 345));
+        level.add(new Stool(940, 345));
+        level.add(new Stool(1105, 345));
+        level.add(new Stool(1240, 345));
 
 
         Sprite fireball = new Sprite(700, 200);
