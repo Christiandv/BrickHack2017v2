@@ -60,7 +60,10 @@ public class LevelMaker {
         //Aftermath
         level.add(new Shelf(1800, 250));
         level.add(new Stool(1950, 345));
+        level.add(new Cookie(2077, 174));
         level.add(new Shelf(2050, 220));
+        level.addAll(new Couch(2200, 313).getSprites());
+        level.add(new Shelf(2300, 165));
 
 
 
