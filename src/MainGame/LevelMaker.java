@@ -85,6 +85,9 @@ public class LevelMaker {
         level.add(new Stool(3800, 355));
         level.add(new Countertop(4080, 305));
 
+        //Final stretch
+        level.add(new Shelf(4200, 275));
+
 
         for(int i = 0; i < 10; i++){
             level.add(new Lava( i* 640, 399));

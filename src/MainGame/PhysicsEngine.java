@@ -136,6 +136,9 @@ public class PhysicsEngine
                                 ((Stool) p).down = 10;
 
                             }
+                            if (p instanceof Table){
+                                ((Table) p).down = 10;
+                            }
                         }
                     }
                 }
