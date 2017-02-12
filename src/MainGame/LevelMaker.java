@@ -63,7 +63,16 @@ public class LevelMaker {
         level.add(new Cookie(2077, 174));
         level.add(new Shelf(2050, 220));
         level.addAll(new Couch(2200, 313).getSprites());
-        level.add(new Shelf(2300, 165));
+        level.add(new Shelf(2300, 130));
+
+        //Chandelier time
+        level.add(new Cookie(2590,125));
+        level.add(new Cookie(2605,125));
+        level.addAll(new Chandelier(2550, 120).getSprites());
+        level.add(new Stool(2520, 345));
+        level.add(new Shelf(2800, 130));
+        level.add(new Stool(2770, 345));
+        level.add(new Bookcase(2965, 300));
 
 
 
