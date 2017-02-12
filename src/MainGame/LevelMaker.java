@@ -16,7 +16,7 @@ public class LevelMaker {
 
         level.add(new Platform(400,200));
         level.addAll( new Couch(10, 313).getSprites());
-        level.addAll(new Chair(300,200).getSprites());
+        level.addAll(new Chair(300,312).getSprites());
         level.addAll(new Chandelier(500, 240).getSprites());
         return level;
     }
