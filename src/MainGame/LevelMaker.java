@@ -1,8 +1,16 @@
-package MainGame;
-
-/**
- * Created by Chris on 2/11/2017.
+/*
+ * File: LevelMaker.java
+ *
+ * The level-maker class, this creates the initial objects and, well, the level
+ *
+ * @author Sebastian Serrano-Berthet : sas3897 (github)
+ * @author Christian Vaughan : christiandv (github)
+ * @author Josef Lenz : JosefLenz (github)
+ * @author Caitlin Barron : CaitlinBarron (github)
+ *
  */
+
+package MainGame;
 
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.media.Media;
