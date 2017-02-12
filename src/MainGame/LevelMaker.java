@@ -18,12 +18,15 @@ public class LevelMaker {
         //Begin hardcoding
         level.addAll(new Couch(10, 313).getSprites());
         level.addAll(new Chair(308,312).getSprites());
+        level.add(new Cookie(452, 222)); //The first of many...
         level.add(new Shelf(425, 270));
         level.add(new Bookcase(600, 271));
 
         //Begin stools
+        level.add(new Cookie(812, 305));
         level.add(new Stool(800, 345));
         level.add(new Stool(940, 345));
+        level.add(new Cookie(1117, 305));
         level.add(new Stool(1105, 345));
         level.add(new Stool(1240, 345));
 
