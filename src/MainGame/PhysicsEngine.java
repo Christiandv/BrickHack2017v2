@@ -23,8 +23,8 @@ public class PhysicsEngine {
 
     ArrayList<Sprite> sprites;
 
-    private final int IPLAYER_X = 160;
-    private final int IPLAYER_Y = 60;
+    private final int IPLAYER_X = 50;
+    private final int IPLAYER_Y = 313;
     //platforms
     //enemies
     //powerups
@@ -66,6 +66,9 @@ public class PhysicsEngine {
         for(Sprite p : sprites){
             // you bee hitting a platform man
             if( p.getBounds().intersects(player.getBounds())){
+                if(p instanceof Shelf){
+                    ((Shelf)p).down = true;
+                }
                 if(p.hurts){
                     endGame = true;
                 }
@@ -102,8 +105,16 @@ public class PhysicsEngine {
                         }
                     }
                 }
+                if( p instanceof Shelf){
+                    ((Shelf)p).update();
+                    ((Shelf)p).down = false;
+                }
+
+
             }
         }
+
+
     }
     public Player getPlayer()
     {
