@@ -74,7 +74,7 @@ public class LevelMaker {
         //Chandelier time
         level.add(new Cookie(2590,125));
         level.add(new Cookie(2605,125));
-        level.add(new Chandelier(550, 120));//2550.120
+        level.add(new Chandelier(2550, 120));
         level.add(new Stool(2520, 345));
         level.add(new Cube(2815, 65));
         level.add(new Shelf(2800, 130));
