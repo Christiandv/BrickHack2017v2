@@ -16,8 +16,8 @@ public class Chandelier {
         ChandelierBase.hard = true;
         ChandelierBar.hard = true;
 
-        ChandelierBase.loadImage("media/images/chandalier.png");
-        ChandelierBar.loadImage("media/images/chandalierCollisionBar.png");
+        ChandelierBase.loadImage("media/images/chandelier.png");
+        ChandelierBar.loadImage("media/images/chandelierCollisionBar.png");
 
         ChandelierBase.setImageDimensions();
         ChandelierBar.setImageDimensions();

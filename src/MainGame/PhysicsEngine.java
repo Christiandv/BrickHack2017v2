@@ -34,14 +34,7 @@ public class PhysicsEngine {
         player = new Player(IPLAYER_X, IPLAYER_Y);
         sprites = new ArrayList<Sprite>();
 
-        Platform platform = new Platform(400,200);
-        Couch couch = new Couch(10, 313);
-        ArrayList<Sprite> couchparts = couch.getSprites();
-        Chair chair = new Chair(300, 200);
-        ArrayList<Sprite> chairparts = chair.getSprites();
-        sprites.addAll(couchparts);
-        sprites.addAll(chairparts);
-        sprites.add(platform);
+        sprites = levelGen.getLevel1();
     }
 
 

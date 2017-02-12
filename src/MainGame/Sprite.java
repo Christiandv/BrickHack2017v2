@@ -25,6 +25,7 @@ public class Sprite {
     protected boolean vis;
     protected Image image;
     public boolean hard;
+    public boolean hurts;
 
     public Sprite(int x, int y) {
 
@@ -32,6 +33,7 @@ public class Sprite {
         this.y = y;
         vis = true;
         hard = false;
+        hurts = false;
     }
 
     protected void setImageDimensions() {
@@ -64,7 +66,7 @@ public class Sprite {
 
     public boolean isHard() { return hard; }
 
-    public void setHard() { hard = true; }
+    public void setHard() { hard = true; };
 
     public void setVisible(Boolean visible) {
         vis = visible;
