@@ -12,32 +12,38 @@
 
 package MainGame;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
-public class Chandelier {
-    Sprite ChandelierBase;
+public class Chandelier extends Sprite{
+
     Sprite ChandelierBar;
 
     public Chandelier(int x, int y){
-        ChandelierBase = new Sprite(x - 21, y - 65);
-        ChandelierBar = new Sprite(x, y + 46);
-
-        ChandelierBase.hard = false;
+        super(x,y);
+        hard = true;
+        ChandelierBar = new Sprite(x+20, y + 112); // if you fuck around here tell me -christian
         ChandelierBar.hard = true;
-
-        ChandelierBase.loadImage("media/images/chandelier.png");
         ChandelierBar.loadImage("media/images/chandelierCollisionBar.png");
-
-        ChandelierBase.setImageDimensions();
         ChandelierBar.setImageDimensions();
+        loadImage("media/images/chandalierBar.png");
+        setImageDimensions();
     }
 
-    public ArrayList<Sprite> getSprites()
-    {
-        ArrayList<Sprite> sprites = new ArrayList<Sprite>();
-        sprites.add(ChandelierBase);
-        sprites.add(ChandelierBar);
-        return sprites;
+//    public ArrayList<Sprite> getSprites()
+//    {
+//        ArrayList<Sprite> sprites = new ArrayList<Sprite>();
+//        sprites.add(ChandelierBase);
+//        sprites.add(ChandelierBar);
+//        return sprites;
+//    }
+
+
+    @Override
+    public Rectangle getBounds() {
+        return ChandelierBar.getBounds();
     }
+
 
 }
