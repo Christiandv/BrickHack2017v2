@@ -74,7 +74,7 @@ public class LevelMaker {
         //Chandelier time
         level.add(new Cookie(2590,125));
         level.add(new Cookie(2605,125));
-        level.addAll(new Chandelier(2550, 120).getSprites());
+        level.add(new Chandelier(550, 120));//2550.120
         level.add(new Stool(2520, 345));
         level.add(new Cube(2815, 65));
         level.add(new Shelf(2800, 130));
@@ -91,8 +91,8 @@ public class LevelMaker {
         //Final stretch
         level.add(new Shelf(4350, 245));
         level.add(new Shelf(4550, 245));
-        level.addAll(new Chandelier(4700, 170).getSprites());
-        level.addAll(new Chandelier(4930, 150).getSprites());
+        level.add(new Chandelier(4700, 210));
+        level.add(new Chandelier(4930, 180));
         level.addAll(new Chair(5100, 312).getSprites());
         level.add(new Shelf(5200, 300));
         level.add(new Shelf(5400, 270));
