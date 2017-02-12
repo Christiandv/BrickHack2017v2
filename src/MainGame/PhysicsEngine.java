@@ -65,14 +65,12 @@ public class PhysicsEngine {
     public void playerCollisions(){
         for(Sprite p : sprites){
             // you bee hitting a platform man
-            if( p.getBounds().intersects(player.getBounds())){
-                if(p instanceof Bookcase){
-                    ((Bookcase)p).down = true;
-                }
-                if(p.hurts){
+            if( p.getBounds().intersects(player.getBounds())) {
+
+                if (p.hurts) {
                     endGame = true;
                 }
-                if(p.isHard()) {// idk maybe we want passable platforms
+                if (p.isHard()) {// idk maybe we want passable platforms
                     xOff = player.width;
                     yOff = player.height;
                     xOverLap = (player.x + player.width) - p.x;
@@ -102,16 +100,23 @@ public class PhysicsEngine {
                             // PLAYER LANDED ON TOP
                             player.y = p.y - player.height;
                             player.landed();
+                            if (p instanceof Bookcase) {
+                                ((Bookcase) p).down = 10;
+
+                            }
+                            if (p instanceof Stool) {
+                                ((Stool) p).down = 10;
+
+                            }
                         }
                     }
-                }
-            }else {
-                if(p instanceof Bookcase){
-                    ((Bookcase)p).down = false;
                 }
             }
             if( p instanceof Bookcase){
                 ((Bookcase)p).update();
+            }
+            if( p instanceof Stool){
+                ((Stool)p).update();
             }
         }
     }

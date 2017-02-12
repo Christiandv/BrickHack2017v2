@@ -6,7 +6,7 @@ package MainGame;
 public class Bookcase extends Sprite
 {
     int maxY;
-    boolean down = false;
+    int down = 0;
     public Bookcase (int x, int y)
     {
         super(x, y);
@@ -14,15 +14,18 @@ public class Bookcase extends Sprite
         init();
     }
     public void update(){
-        if(down) {
+        if(down>0) {
             y++;
             if (y > 460)
                 y = 460;
+            down -- ;
         } else {
             y--;
             if(y < maxY)
                 y = maxY;
         }
+        if( down < 0)
+            down = 0;
     }
 
     public void init(){
