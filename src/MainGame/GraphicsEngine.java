@@ -102,10 +102,7 @@ public class GraphicsEngine extends JPanel implements ActionListener {
 
         Player player = physics.getPlayer();
 
-        if (player.isVisible()) {
-            g.drawImage(player.getImage(), player.getX(), player.getY(),
-                    this);
-        }
+
 
         ArrayList<Sprite> sprites = physics.getSprites();
         for( Sprite p: sprites){
@@ -113,6 +110,11 @@ public class GraphicsEngine extends JPanel implements ActionListener {
                 g.drawImage(p.getImage(), p.getX(), p.getY(),
                         this);
             }
+        }
+
+        if (player.isVisible()) {
+            g.drawImage(player.getImage(), player.getX(), player.getY(),
+                    this);
         }
 
     }
