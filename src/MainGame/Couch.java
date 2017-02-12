@@ -23,10 +23,10 @@ public class Couch
 
     public Couch(int x, int y)
     {
-        couch_mid = new Sprite(x+38, y+47);
+        couch_mid = new Sprite(x+38, y+63);
         couch_back = new Sprite(x+3, y+10);
-        couch_right = new Sprite(x+158, y+47);
-        couch_left = new Sprite(x, y+47);
+        couch_right = new Sprite(x+154, y+47);
+        couch_left = new Sprite(x+3, y+47);
 
         couch_mid.hard = true;
         couch_right.hard = true;
