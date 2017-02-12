@@ -25,7 +25,7 @@ public class PhysicsEngine
     Player player;
     LevelMaker levelGen;
     boolean endGame = false;
-    boolean wonGame = true;
+    boolean wonGame = false;
     int scroll;
 
     ArrayList<Sprite> sprites;
@@ -194,6 +194,13 @@ public class PhysicsEngine
                             case 6:
                                 //pie code
                                 if (p.isVisible()) {
+
+                                    tune = "media/music/Pixelland (end level song).mp3"; //move this
+                                    Media hit = new Media(Paths.get(tune).toUri().toString());
+                                    song.stop();
+                                    song = new MediaPlayer(hit);
+                                    song.play();
+
                                     wonGame = true;
                                     endGame = true;
                                 }
