@@ -86,19 +86,16 @@ public class PhysicsEngine
             // you bee hitting a platform man
             if (p.getBounds().intersects(player.getBounds())) {
 
-                if (p.hurts)
-                {
-                    if(player.powerup && player.type == "pan")
-                    {
+                if (p.hurts) {
+                    if (player.powerup && player.type == "pan") {
                         player.type = "none";
                         player.powerup = false;
                         endGame = false;
-                    }
-                    else
-                    {
+                    } else {
                         endGame = true;
                     }
                 }
+
                 if (p.isHard()) {// idk maybe we want passable platforms
                     xOff = player.width;
                     yOff = player.height;
@@ -150,8 +147,7 @@ public class PhysicsEngine
                                 break;
                             case 1:
                                 //cookie code
-                                if(p.isVisible())
-                                {
+                                if (p.isVisible()) {
                                     playerScore++;
                                 }
                                 p.setVisible(false);
@@ -164,8 +160,7 @@ public class PhysicsEngine
                                 break;
                             case 4:
                                 //pan code
-                                if(p.isVisible())
-                                {
+                                if (p.isVisible()) {
                                     player.powerup = true;
                                     player.type = "pan";
                                 }
@@ -181,13 +176,15 @@ public class PhysicsEngine
 
                     }
                 }
-                if (p instanceof Bookcase) {
-                    ((Bookcase) p).update();
-                }
-                if (p instanceof Stool) {
-                    ((Stool) p).update();
-                }
             }
+            
+            if (p instanceof Bookcase) {
+                ((Bookcase) p).update();
+            }
+            if (p instanceof Stool) {
+                ((Stool) p).update();
+            }
+
         }
     }
     public Player getPlayer()
