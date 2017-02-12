@@ -66,8 +66,8 @@ public class PhysicsEngine
     }
 
     public void handleScroll(){
-        if( player.x+ player.width> scroll + 550){
-            scroll = player.x + player.width - 550;
+        if( player.x+ player.width> scroll + 450){
+            scroll = player.x + player.width - 450;
         }
         if( player.x < scroll + 150){
             scroll = player.x  - 150;
