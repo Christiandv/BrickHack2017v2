@@ -22,13 +22,7 @@ public class LevelMaker {
         level.add(new Bookcase(540, 271));
 
 
-        Sprite fireball = new Sprite(700, 200);
-        fireball.loadImage("media/images/fireballTest.gif");
-        fireball.setImageDimensions();
-        fireball.hurts = true;
-        fireball.setHard();
-
-        level.add(fireball);
+        level.add(new Fireball(700,200));
 
         for(int i = 0; i < 10; i++){
             level.add(new Lava( i* 640, 399));
