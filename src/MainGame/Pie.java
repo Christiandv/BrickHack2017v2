@@ -13,7 +13,7 @@ public class Pie extends Powerup
 
     public void init(){
         hard = false;
-        type = 0;
+        type = 6;
         loadImage("media/images/pie.png");
         setImageDimensions();
     }

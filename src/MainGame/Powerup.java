@@ -13,6 +13,7 @@ public class Powerup extends Sprite
     //3 - blanket
     //4 - saucepan
     //5 - rocket ship
+    //6 - pie (level end)
 
     public Powerup(int x, int y)
     {
