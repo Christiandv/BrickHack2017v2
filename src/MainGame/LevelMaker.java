@@ -20,6 +20,7 @@ public class LevelMaker {
         //Begin hardcoding
         level.addAll( new Couch(10, 313).getSprites());
         level.addAll(new Chair(308,312).getSprites());
+        level.add(new Shelf(360, 290));
         level.addAll(new Chandelier(500, 240).getSprites());
 
         Sprite fireball = new Sprite(700, 200);
