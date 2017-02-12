@@ -53,6 +53,10 @@ public class GraphicsEngine extends JPanel implements ActionListener {
     public GraphicsEngine(int width, int height) {
         WIDTH = width;
         HEIGHT = height;
+        addKeyListener(new TAdapter());
+        setFocusable(true);
+        setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        timer = new Timer(DELAY, this);
         initBoard();
         JFXPanel fxPanel = new JFXPanel();
         String bip = "media/music/Pixelland (end level song).mp3"; //move this
@@ -63,17 +67,9 @@ public class GraphicsEngine extends JPanel implements ActionListener {
     }
 
     private void initBoard() {
-
-        addKeyListener(new TAdapter());
-        setFocusable(true);
         setBackground(Color.BLACK);
         ingame = true;
-
-        setPreferredSize(new Dimension(WIDTH, HEIGHT));
-
         physics = new PhysicsEngine();
-
-        timer = new Timer(DELAY, this);
         timer.start();
     }
 
@@ -124,13 +120,21 @@ public class GraphicsEngine extends JPanel implements ActionListener {
     private void drawGameOver(Graphics g) {
 
         String msg = "Game Over";
-        Font small = new Font("Helvetica", Font.BOLD, 14);
-        FontMetrics fm = getFontMetrics(small);
+        Font font = new Font("Helvetica", Font.BOLD, 50);
+        FontMetrics fm = getFontMetrics(font);
 
         g.setColor(Color.white);
-        g.setFont(small);
+        g.setFont(font);
         g.drawString(msg, (WIDTH - fm.stringWidth(msg)) / 2,
                 HEIGHT / 2);
+        msg = "Press Enter to restart";
+        font = new Font("Helvetica", Font.BOLD, 30);
+        fm = getFontMetrics(font);
+
+        g.setColor(Color.white);
+        g.setFont(font);
+        g.drawString(msg, (WIDTH - fm.stringWidth(msg)) / 2,
+                HEIGHT / 2 + 50);
     }
 
     // update function
@@ -167,6 +171,11 @@ public class GraphicsEngine extends JPanel implements ActionListener {
         @Override
         public void keyPressed(KeyEvent e) {
             physics.keyPressed(e);
+            int key = e.getKeyCode();
+
+            if (key == KeyEvent.VK_ENTER && ingame == false) {
+               initBoard();
+            }
         }
     }
 }
