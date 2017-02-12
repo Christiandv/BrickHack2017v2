@@ -74,9 +74,7 @@ public class Player extends Sprite {
             // WENT OFF THE RIGHT SIDE
         }
 
-        if (y < 1) {
-            y = 1;
-        }
+
         if( y + height> 400){
             // FELL OFF THE BOTTOM
             y = 400 - height;
@@ -149,7 +147,7 @@ public class Player extends Sprite {
 
     }
     public void jump(){
-        if( jumps > 0 && dy > -12){
+        if( jumps > 0 ){
             jumps --;
             dy = -20;
             onGround = false;
