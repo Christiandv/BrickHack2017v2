@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 public class PhysicsEngine {
     Player player;
-    ArrayList<Platform> platforms;
-    ArrayList<Couch> couches;
     LevelMaker levelGen;
+    ArrayList<Sprite> sprites;
+
     private final int IPLAYER_X = 40;
     private final int IPLAYER_Y = 60;
     //platforms
@@ -29,11 +29,15 @@ public class PhysicsEngine {
     public PhysicsEngine(){
         levelGen = new LevelMaker();
         player = new Player(IPLAYER_X, IPLAYER_Y);
-        platforms = new ArrayList<Platform>();
-        platforms.add(new Platform(400,200));
-        couches = new ArrayList<Couch>();
-        couches.add(new Couch(10, 413));
+        sprites = new ArrayList<Sprite>();
 
+        Platform platform = new Platform(400,200);
+        Couch couch = new Couch(10, 413);
+        ArrayList<Sprite> couchparts = couch.getSprites();
+        Chair chair = new Chair(300, 400);
+        ArrayList<Sprite> chairparts = chair.getSprites();
+        sprites.addAll(couchparts);
+        sprites.addAll(chairparts);
     }
 
 
@@ -91,12 +95,8 @@ public class PhysicsEngine {
     {
         return player;
     }
-    public ArrayList<Platform> getPlatforms(){
-        return platforms;
-    }
-    public ArrayList<Couch> getCouches(){
-        return couches;
-    }
+
+    public ArrayList<Sprite> getSprites() { return sprites; }
 
     public void keyPressed(KeyEvent e) {
         player.keyPressed(e);
