@@ -13,7 +13,7 @@ public class Cookie extends Powerup {
     public void init(){
         hard = false;
         type = 1;
-        loadImage("media/images/pie.png");
+        loadImage("media/images/cookie.png");
         setImageDimensions();
     }
 }
