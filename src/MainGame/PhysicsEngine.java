@@ -18,9 +18,10 @@ import java.util.ArrayList;
 public class PhysicsEngine {
     Player player;
     LevelMaker levelGen;
+
     ArrayList<Sprite> sprites;
 
-    private final int IPLAYER_X = 40;
+    private final int IPLAYER_X = 160;
     private final int IPLAYER_Y = 60;
     //platforms
     //enemies
@@ -32,12 +33,13 @@ public class PhysicsEngine {
         sprites = new ArrayList<Sprite>();
 
         Platform platform = new Platform(400,200);
-        Couch couch = new Couch(10, 413);
+        Couch couch = new Couch(10, 313);
         ArrayList<Sprite> couchparts = couch.getSprites();
-        Chair chair = new Chair(300, 400);
+        Chair chair = new Chair(300, 200);
         ArrayList<Sprite> chairparts = chair.getSprites();
         sprites.addAll(couchparts);
         sprites.addAll(chairparts);
+        sprites.add(platform);
     }
 
 
@@ -52,7 +54,7 @@ public class PhysicsEngine {
     int yOverLap, xOverLap;
     int yOff, xOff;
     public void playerCollisions(){
-        for(Platform p : platforms){
+        for(Sprite p : sprites){
             // you bee hitting a platform man
             if( p.getBounds().intersects(player.getBounds())){
                 if(p.isHard()){// idk maybe we want passable platforms

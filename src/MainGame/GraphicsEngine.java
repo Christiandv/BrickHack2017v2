@@ -107,8 +107,8 @@ public class GraphicsEngine extends JPanel implements ActionListener {
                     this);
         }
 
-        ArrayList<Platform> platforms = physics.getPlatforms();
-        for( Platform p: platforms){
+        ArrayList<Sprite> sprites = physics.getSprites();
+        for( Sprite p: sprites){
             if (p.isVisible()) {
                 g.drawImage(p.getImage(), p.getX(), p.getY(),
                         this);
