@@ -40,8 +40,8 @@ public class Player extends Sprite {
         image = idle;
         getImageDimensions();
         jumps = 2;
-        right = new Timer(20, e -> {dx += 1;});
-        left = new Timer( 20, e -> dx -= 1);
+        right = new Timer(20, e -> {dx += 1;  if(onGround) image = movingRight;});
+        left = new Timer( 20, e -> {dx -= 1;  if(onGround) image = movingLeft;});
     }
 
     protected void loadImages() {
@@ -63,7 +63,7 @@ public class Player extends Sprite {
         x += dx;
         y += dy;
 
-        if( Math.abs(dx) < 1 && !walking){
+        if( Math.abs(dx) < 1 && !walking && onGround){
             image = idle;
         }
 
@@ -102,16 +102,14 @@ public class Player extends Sprite {
         if (key == KeyEvent.VK_A) {
             left.start();
             right.stop();
-            if(onGround)
-                image = movingLeft;
+
             walking = true;
         }
 
         if (key == KeyEvent.VK_D) {
             right.start();
             left.stop();
-            if(onGround)
-                image = movingRight;
+
             walking = true;
         }
 
@@ -120,6 +118,8 @@ public class Player extends Sprite {
             if( jumps > 0 && dy > -12){
                 jumps --;
                 dy = -20;
+                onGround = false;
+                image = jumping;
             }
 
         }
@@ -158,5 +158,6 @@ public class Player extends Sprite {
         dy = 0;
         dx *= .75;
         onGround = true;
+
     }
 }
