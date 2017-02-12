@@ -19,8 +19,8 @@ public class Chair{
     Sprite chairLegs;
 
     public Chair(int x, int y){
-        chairBack = new Sprite(x + 11, y + 75);
-        chairLegs = new Sprite(x + 60, y + 46);
+        chairBack = new Sprite(x + 49, y - 27);
+        chairLegs = new Sprite(x, y + 46);
 
         chairBack.hard = true;
         chairLegs.hard = true;
