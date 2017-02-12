@@ -20,4 +20,8 @@ public class Powerup extends Sprite
         super(x, y);
         type = 0;
     }
+
+    public void setVisible(Boolean visible) {
+        vis = visible;
+    }
 }

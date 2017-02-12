@@ -110,7 +110,12 @@ public class GraphicsEngine extends JPanel implements ActionListener {
             g.drawImage(player.getImage(), player.getX() - scroll, player.getY(),
                     this);
         }
+        Font font = new Font("Helvetica", Font.BOLD, 30);
+        FontMetrics fm = getFontMetrics(font);
 
+        g.setColor(Color.black);
+        g.setFont(font);
+        g.drawString(Integer.toString(physics.playerScore),5, 25);
     }
 
     private void drawGameOver(Graphics g) {

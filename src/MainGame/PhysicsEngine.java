@@ -33,6 +33,8 @@ public class PhysicsEngine
     public JFXPanel thing;
     public String tune;
 
+    public int playerScore;
+
     private final int IPLAYER_X = 50;
     private final int IPLAYER_Y = 313;
     //platforms
@@ -45,7 +47,7 @@ public class PhysicsEngine
         sprites = new ArrayList<Sprite>();
 
         sprites = levelGen.getLevel1();
-
+        playerScore = 0;
         thing = new JFXPanel();
         tune = "media/music/Mountain Emperor (lava song).mp3"; //move this
         Media hit = new Media(Paths.get(tune).toUri().toString());
@@ -78,10 +80,11 @@ public class PhysicsEngine
 
     int yOverLap, xOverLap;
     int yOff, xOff;
-    public void playerCollisions(){
-        for(Sprite p : sprites){
+    public void playerCollisions()
+    {
+        for(Sprite p : sprites) {
             // you bee hitting a platform man
-            if( p.getBounds().intersects(player.getBounds())) {
+            if (p.getBounds().intersects(player.getBounds())) {
 
                 if (p.hurts) {
                     endGame = true;
@@ -127,12 +130,46 @@ public class PhysicsEngine
                         }
                     }
                 }
-            }
-            if( p instanceof Bookcase){
-                ((Bookcase)p).update();
-            }
-            if( p instanceof Stool){
-                ((Stool)p).update();
+                if (!p.isHard())//possibly powerup
+                {
+                    if (p instanceof Powerup) {
+                        int type = ((Powerup) p).type;
+                        switch (type) {
+                            case 0:
+                                //cube checkpoint code
+                                break;
+                            case 1:
+                                if(p.isVisible())
+                                {
+                                    playerScore++;
+                                }
+                                p.setVisible(false);
+                                break;
+                            case 2:
+                                //lego code
+                                break;
+                            case 3:
+                                //blanket code
+                                break;
+                            case 4:
+                                //pan code
+                                break;
+                            case 5:
+                                //rocket code
+                                break;
+                            case 6:
+                                //pie code
+                                break;
+                        }
+
+                    }
+                }
+                if (p instanceof Bookcase) {
+                    ((Bookcase) p).update();
+                }
+                if (p instanceof Stool) {
+                    ((Stool) p).update();
+                }
             }
         }
     }
