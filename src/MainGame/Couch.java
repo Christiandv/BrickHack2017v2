@@ -1,9 +1,7 @@
-package MainGame;
-
 /*
  * File: Couch.java
  *
- * couch
+ * The sprite and couch behavior for couches.
  *
  * @author Sebastian Serrano-Berthet : sas3897 (github)
  * @author Christian Vaughan : christiandv (github)
@@ -11,6 +9,8 @@ package MainGame;
  * @author Caitlin Barron : CaitlinBarron (github)
  *
  */
+
+package MainGame;
 
 import java.util.ArrayList;
 
