@@ -24,8 +24,8 @@ class Player extends Sprite {
     int dy;
     private int jumps;
 
-    Timer right;
-    Timer left;
+    private Timer right;
+    private Timer left;
     boolean onGround = true;
     boolean walking = false;
     Player(int x, int y) {
@@ -70,10 +70,6 @@ class Player extends Sprite {
         if (x < 1) {
             x = 1;
         }
-        if ( x > 700){
-            // WENT OFF THE RIGHT SIDE
-        }
-
 
         if( y + height> 400){
             // FELL OFF THE BOTTOM
