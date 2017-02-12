@@ -12,9 +12,9 @@ public class Lava extends Sprite {
     }
 
     public void init(){
-        hard = true;
+
         hurts = true;
-        loadImage("media/images/shelf.png");
+        loadImage("media/images/lava.png");
         setImageDimensions();
     }
 }

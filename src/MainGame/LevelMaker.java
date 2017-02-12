@@ -15,7 +15,7 @@ public class LevelMaker {
         ArrayList<Sprite> level = new ArrayList<Sprite>();
 
         for(int i = 0; i < 10; i++){
-            level.add(new Lava( i* 640, 400));
+            level.add(new Lava( i* 640, 399));
         }
         level.add(new Platform(400,200));
         level.addAll( new Couch(10, 313).getSprites());
