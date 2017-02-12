@@ -35,6 +35,9 @@ public class PhysicsEngine
 
     public int playerScore;
 
+    private int chkX;
+    private int chkY;
+
     private final int IPLAYER_X = 50;
     private final int IPLAYER_Y = 313;
     //platforms
