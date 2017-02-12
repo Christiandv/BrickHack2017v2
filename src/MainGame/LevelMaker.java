@@ -33,6 +33,12 @@ public class LevelMaker {
         MediaPlayer mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
 
+        //Background image
+        level.add(new Background(0,0));
+        level.add(new Background(640,0));
+        level.add(new Background(1280,0));
+        level.add(new Background(1920,0));
+
         //Begin hardcoding
         level.addAll(new Couch(10, 313).getSprites());
         level.addAll(new Chair(308,312).getSprites());
