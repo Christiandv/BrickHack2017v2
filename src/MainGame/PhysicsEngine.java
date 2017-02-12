@@ -25,7 +25,7 @@ public class PhysicsEngine
     Player player;
     LevelMaker levelGen;
     boolean endGame = false;
-    boolean wonGame = true;
+    boolean wonGame = false;
     int scroll;
 
     ArrayList<Sprite> sprites;
