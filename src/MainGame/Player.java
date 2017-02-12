@@ -91,13 +91,7 @@ public class Player extends Sprite {
 
         int key = e.getKeyCode();
 
-        if (key == KeyEvent.VK_SPACE) {
-            // jump
-            if( jumps > 0 && dy > -12){
-                jumps --;
-                dy = -20;
-            }
-        }
+
 
         if (key == KeyEvent.VK_A) {
             left.start();
@@ -113,7 +107,7 @@ public class Player extends Sprite {
             walking = true;
         }
 
-        if (key == KeyEvent.VK_W) {
+        if (key == KeyEvent.VK_W || key == KeyEvent.VK_SPACE) {
             // jump
             if( jumps > 0 && dy > -12){
                 jumps --;
