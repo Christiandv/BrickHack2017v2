@@ -35,7 +35,13 @@ public class LevelMaker {
         //First power-up time
         level.add(new Stool(1650, 345));
         level.add(new Saucepan(1665, 300));
+
+        //Aftermath
         level.add(new Shelf(1800, 250));
+        level.add(new Stool(1950, 345));
+        level.add(new Shelf(2050, 220));
+
+
 
         for(int i = 0; i < 10; i++){
             level.add(new Lava( i* 640, 399));
