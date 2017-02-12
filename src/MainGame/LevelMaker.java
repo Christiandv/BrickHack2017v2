@@ -17,9 +17,9 @@ public class LevelMaker {
         for(int i = 0; i < 10; i++){
             level.add(new Lava( i* 640, 399));
         }
-        level.add(new Platform(400,200));
+        //Begin hardcoding
         level.addAll( new Couch(10, 313).getSprites());
-        level.addAll(new Chair(300,312).getSprites());
+        level.addAll(new Chair(308,312).getSprites());
         level.addAll(new Chandelier(500, 240).getSprites());
 
         Sprite fireball = new Sprite(700, 200);
