@@ -12,6 +12,18 @@
 
 package MainGame;
 
-public class Stool {
+public class Stool extends Sprite{
 
+    public Stool (int x, int y)
+    {
+        super(x, y);
+
+        init();
+    }
+
+    public void init(){
+        hard = true;
+        loadImage("media/images/stool.png");
+        setImageDimensions();
+    }
 }
