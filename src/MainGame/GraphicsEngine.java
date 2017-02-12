@@ -81,7 +81,6 @@ public class GraphicsEngine extends JPanel implements ActionListener {
         }
         else
         {
-            physics.song.stop();
             drawGameOver(g);
         }
 

@@ -29,6 +29,7 @@ class Player extends Sprite {
     private Timer left;
     boolean onGround = true;
     boolean walking = false;
+    boolean invincible = false;
     Player(int x, int y) {
         super(x, y);
 

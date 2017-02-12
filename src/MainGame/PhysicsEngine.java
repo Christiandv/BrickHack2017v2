@@ -86,7 +86,7 @@ public class PhysicsEngine
             // you bee hitting a platform man
             if (p.getBounds().intersects(player.getBounds())) {
 
-                if (p.hurts) {
+                if (p.hurts && !player.invincible) {
                     if (player.powerup && player.type == "pan") {
                         player.type = "none";
                         player.powerup = false;
@@ -95,6 +95,13 @@ public class PhysicsEngine
                         endGame = false;
                     } else {
                         endGame = true;
+                        player.invincible = true;
+                        tune = "media/music/Lobby Time (death).mp3"; //move this
+                        Media hit = new Media(Paths.get(tune).toUri().toString());
+                        song.stop();
+                        song = new MediaPlayer(hit);
+                        song.play();
+
                     }
                 }
 
