@@ -25,6 +25,7 @@ public class PhysicsEngine
     Player player;
     LevelMaker levelGen;
     boolean endGame = false;
+    boolean wonGame = true;
     int scroll;
 
     ArrayList<Sprite> sprites;
@@ -192,7 +193,12 @@ public class PhysicsEngine
                                 break;
                             case 6:
                                 //pie code
-                                break;
+                                if (p.isVisible()) {
+                                    wonGame = true;
+                                    endGame = true;
+                                }
+                                p.setVisible(false);
+
                         }
 
                     }
