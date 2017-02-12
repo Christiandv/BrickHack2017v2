@@ -90,6 +90,7 @@ public class PhysicsEngine
                     if (player.powerup && player.type == "pan") {
                         player.type = "none";
                         player.powerup = false;
+                        player.jump();
                         endGame = false;
                     } else {
                         endGame = true;

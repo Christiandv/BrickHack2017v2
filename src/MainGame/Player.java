@@ -44,9 +44,8 @@ class Player extends Sprite {
         left = new Timer( 20, e -> {dx -= 1;  if(onGround) image = movingLeft;});
     }
 
-
     protected void loadImages() {
-        if(powerup && type == "pan")
+        if(type == "pan")
         {
             jumping = new ImageIcon("media/images/stickyJumpingSauce.gif").getImage();
             movingLeft = new ImageIcon("media/images/stickyLeftWalkSauce.gif").getImage();
@@ -60,10 +59,6 @@ class Player extends Sprite {
             movingRight = new ImageIcon("media/images/stickyRightWalk.gif").getImage();
             idle = new ImageIcon("media/images/stickyIdle.gif").getImage();
         }
-    }
-
-    protected void loadImagesPan() {
-
     }
 
     public void move() {
