@@ -70,18 +70,18 @@ public class GraphicsEngine extends JPanel implements ActionListener {
     }
 
 
-
     // main draw
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        if (ingame) {
-
+        if (ingame)
+        {
             drawObjects(g);
-
-        } else {
-
+        }
+        else
+        {
+            physics.song.stop();
             drawGameOver(g);
         }
 
@@ -150,6 +150,7 @@ public class GraphicsEngine extends JPanel implements ActionListener {
 
         if (!ingame) {
             timer.stop();
+
         }
     }
 

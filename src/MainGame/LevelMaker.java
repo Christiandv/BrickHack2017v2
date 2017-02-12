@@ -27,12 +27,6 @@ public class LevelMaker {
     public ArrayList<Sprite> getLevel1(){
         ArrayList<Sprite> level = new ArrayList<Sprite>();
 
-        JFXPanel fxPanel = new JFXPanel();
-        String bip = "media/music/Pixelland (end level song).mp3"; //move this
-        Media hit = new Media(Paths.get(bip).toUri().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(hit);
-        mediaPlayer.play();
-
         //Background image
         level.add(new Background(0,0));
         level.add(new Background(640,0));

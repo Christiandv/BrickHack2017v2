@@ -29,6 +29,9 @@ public class PhysicsEngine
 
     ArrayList<Sprite> sprites;
 
+    public MediaPlayer song;
+    public JFXPanel thing;
+
     private final int IPLAYER_X = 50;
     private final int IPLAYER_Y = 313;
     //platforms
@@ -42,6 +45,11 @@ public class PhysicsEngine
 
         sprites = levelGen.getLevel1();
 
+        thing = new JFXPanel();
+        String bip = "media/music/Mountain Emperor (lava song).mp3"; //move this
+        Media hit = new Media(Paths.get(bip).toUri().toString());
+        song = new MediaPlayer(hit);
+        song.play();
     }
 
 
