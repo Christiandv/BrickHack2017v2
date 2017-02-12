@@ -114,16 +114,7 @@ public class GraphicsEngine extends JPanel implements ActionListener {
                         this);
             }
         }
-        g.setColor(Color.WHITE);
 
-        ArrayList<Couch> couches = physics.getCouches();
-        for( Couch c: couches){
-            if (c.isVisible()) {
-                g.drawImage(c.getImage(), c.getX(), c.getY(),
-                        this);
-            }
-        }
-        g.setColor(Color.WHITE);
     }
 
     private void drawGameOver(Graphics g) {

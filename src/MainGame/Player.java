@@ -109,12 +109,7 @@ public class Player extends Sprite {
 
         if (key == KeyEvent.VK_W || key == KeyEvent.VK_SPACE) {
             // jump
-            if( jumps > 0 && dy > -12){
-                jumps --;
-                dy = -20;
-                onGround = false;
-                image = jumping;
-            }
+            jump();
 
         }
 
@@ -153,5 +148,13 @@ public class Player extends Sprite {
         dx *= .75;
         onGround = true;
 
+    }
+    public void jump(){
+        if( jumps > 0 && dy > -12){
+            jumps --;
+            dy = -20;
+            onGround = false;
+            image = jumping;
+        }
     }
 }
