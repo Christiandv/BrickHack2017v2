@@ -25,6 +25,7 @@ public class PhysicsEngine
     Player player;
     LevelMaker levelGen;
     boolean endGame = false;
+    boolean winGame = false;
     int scroll = 0;
 
     ArrayList<Sprite> sprites;
@@ -104,7 +105,6 @@ public class PhysicsEngine
                         song.stop();
                         song = new MediaPlayer(hit);
                         song.play();
-
                     }
                 }
 
@@ -186,7 +186,12 @@ public class PhysicsEngine
                                 //rocket code
                                 break;
                             case 6:
-                                //pie code
+                                winGame = true;
+                                tune = "media/music/Pixelland (end level song).mp3"; //move this
+                                Media hit = new Media(Paths.get(tune).toUri().toString());
+                                song.stop();
+                                song = new MediaPlayer(hit);
+                                song.play();
                                 break;
                         }
 
