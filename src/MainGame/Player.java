@@ -23,7 +23,8 @@ class Player extends Sprite {
     int dx;
     int dy;
     private int jumps;
-
+    public boolean powerup;
+    public String type;
     private Timer right;
     private Timer left;
     boolean onGround = true;
@@ -43,11 +44,26 @@ class Player extends Sprite {
         left = new Timer( 20, e -> {dx -= 1;  if(onGround) image = movingLeft;});
     }
 
+
     protected void loadImages() {
-        jumping = new ImageIcon("media/images/stickyJumping.gif").getImage();
-        movingLeft = new ImageIcon("media/images/stickyLeftWalk.gif").getImage();
-        movingRight = new ImageIcon("media/images/stickyRightWalk.gif").getImage();
-        idle = new ImageIcon("media/images/stickyIdle.gif").getImage();
+        if(powerup && type == "pan")
+        {
+            jumping = new ImageIcon("media/images/stickyJumpingSauce.gif").getImage();
+            movingLeft = new ImageIcon("media/images/stickyLeftWalkSauce.gif").getImage();
+            movingRight = new ImageIcon("media/images/stickyRightWalkSauce.gif").getImage();
+            idle = new ImageIcon("media/images/stickyIdleSauce.gif").getImage();
+        }
+        else
+        {
+            jumping = new ImageIcon("media/images/stickyJumping.gif").getImage();
+            movingLeft = new ImageIcon("media/images/stickyLeftWalk.gif").getImage();
+            movingRight = new ImageIcon("media/images/stickyRightWalk.gif").getImage();
+            idle = new ImageIcon("media/images/stickyIdle.gif").getImage();
+        }
+    }
+
+    protected void loadImagesPan() {
+
     }
 
     public void move() {

@@ -86,8 +86,18 @@ public class PhysicsEngine
             // you bee hitting a platform man
             if (p.getBounds().intersects(player.getBounds())) {
 
-                if (p.hurts) {
-                    endGame = true;
+                if (p.hurts)
+                {
+                    if(player.powerup && player.type == "pan")
+                    {
+                        player.type = "none";
+                        player.powerup = false;
+                        endGame = false;
+                    }
+                    else
+                    {
+                        endGame = true;
+                    }
                 }
                 if (p.isHard()) {// idk maybe we want passable platforms
                     xOff = player.width;
@@ -139,6 +149,7 @@ public class PhysicsEngine
                                 //cube checkpoint code
                                 break;
                             case 1:
+                                //cookie code
                                 if(p.isVisible())
                                 {
                                     playerScore++;
@@ -153,6 +164,12 @@ public class PhysicsEngine
                                 break;
                             case 4:
                                 //pan code
+                                if(p.isVisible())
+                                {
+                                    player.powerup = true;
+                                    player.type = "pan";
+                                }
+                                p.setVisible(false);
                                 break;
                             case 5:
                                 //rocket code
