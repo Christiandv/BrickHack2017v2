@@ -1,7 +1,7 @@
 /*
  * File: Couch.java
  *
- * The sprite and couch behavior for couches.
+ * The sprite and couch behavior for couch objects.
  *
  * @author Sebastian Serrano-Berthet : sas3897 (github)
  * @author Christian Vaughan : christiandv (github)
