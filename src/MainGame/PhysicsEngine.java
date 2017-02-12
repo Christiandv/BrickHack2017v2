@@ -19,7 +19,7 @@ public class PhysicsEngine {
     Player player;
     ArrayList<Platform> platforms;
     ArrayList<Couch> couches;
-
+    LevelMaker levelGen;
     private final int IPLAYER_X = 40;
     private final int IPLAYER_Y = 60;
     //platforms
@@ -27,11 +27,13 @@ public class PhysicsEngine {
     //powerups
 
     public PhysicsEngine(){
+        levelGen = new LevelMaker();
         player = new Player(IPLAYER_X, IPLAYER_Y);
         platforms = new ArrayList<Platform>();
         platforms.add(new Platform(400,200));
         couches = new ArrayList<Couch>();
         couches.add(new Couch(10, 413));
+
     }
 
 
