@@ -36,6 +36,8 @@ public class LevelMaker {
         level.add(new Background(3200,0));
         level.add(new Background(3840, 0));
         level.add(new Background(4480, 0));
+        level.add(new Background(5120, 0));
+        level.add(new Background(5760, 0));
 
         //Begin hardcoding
         level.addAll(new Couch(10, 313).getSprites());
@@ -89,8 +91,13 @@ public class LevelMaker {
         //Final stretch
         level.add(new Shelf(4350, 245));
         level.add(new Shelf(4550, 245));
-        level.addAll(new Chandelier(4700, 210).getSprites());
-        level.addAll(new Chandelier(4930, 180).getSprites());
+        level.addAll(new Chandelier(4700, 170).getSprites());
+        level.addAll(new Chandelier(4930, 150).getSprites());
+        level.addAll(new Chair(5100, 312).getSprites());
+        level.add(new Shelf(5200, 300));
+        level.add(new Shelf(5400, 270));
+        level.add(new Fridge(5500, 150));
+        level.add(new Pie(5525, 140));
 
 
 
