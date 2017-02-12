@@ -16,19 +16,19 @@ import java.awt.event.KeyEvent;
 import javax.swing.*;
 import java.awt.Image;
 
-public class Player extends Sprite {
+class Player extends Sprite {
 
     Image jumping, movingRight, movingLeft, idle;
 
-    public int dx;
-    public int dy;
+    int dx;
+    int dy;
     private int jumps;
 
     Timer right;
     Timer left;
     boolean onGround = true;
     boolean walking = false;
-    public Player(int x, int y) {
+    Player(int x, int y) {
         super(x, y);
 
         init();
