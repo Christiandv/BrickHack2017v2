@@ -66,55 +66,54 @@ public class PhysicsEngine {
         for(Sprite p : sprites){
             // you bee hitting a platform man
             if( p.getBounds().intersects(player.getBounds())){
-                if(p instanceof Shelf){
-                    ((Shelf)p).down = true;
+                if(p instanceof Bookcase){
+                    ((Bookcase)p).down = true;
                 }
                 if(p.hurts){
                     endGame = true;
                 }
-                if(p.isHard()){// idk maybe we want passable platforms
+                if(p.isHard()) {// idk maybe we want passable platforms
                     xOff = player.width;
                     yOff = player.height;
-                    xOverLap = (player.x+ player.width)- p.x;
-                    if( Math.abs(xOverLap) > Math.abs((p.x+p.width)-player.x )){
-                        xOverLap = (p.x+p.width)-player.x;
+                    xOverLap = (player.x + player.width) - p.x;
+                    if (Math.abs(xOverLap) > Math.abs((p.x + p.width) - player.x)) {
+                        xOverLap = (p.x + p.width) - player.x;
                         xOff = 0;
                     }
-                    yOverLap = (player.y+ player.height)- p.y;
-                    if( Math.abs(yOverLap) > Math.abs((p.y+p.height)-player.y) ){
-                        yOverLap = (p.y+p.height)-player.y;
+                    yOverLap = (player.y + player.height) - p.y;
+                    if (Math.abs(yOverLap) > Math.abs((p.y + p.height) - player.y)) {
+                        yOverLap = (p.y + p.height) - player.y;
                         yOff = 0;
                     }
-                    if( Math.abs(xOverLap)< Math.abs(yOverLap)){
-                        if( xOff == 0){
+                    if (Math.abs(xOverLap) < Math.abs(yOverLap)) {
+                        if (xOff == 0) {
                             // PLAYER HIT LEFT SIDE OF OBJECT
-                            player.x = player.x +xOverLap;
+                            player.x = player.x + xOverLap;
                             player.dx = 0;
-                        }else {
+                        } else {
                             player.x = p.x - player.width;
                             player.dx = 0;
                         }
                     } else {
-                        if( yOff == 0){
-                            player.y = player.y +yOverLap;
+                        if (yOff == 0) {
+                            player.y = player.y + yOverLap;
                             player.dy = 0;
-                        }else {
+                        } else {
                             // PLAYER LANDED ON TOP
                             player.y = p.y - player.height;
                             player.landed();
                         }
                     }
                 }
-                if( p instanceof Shelf){
-                    ((Shelf)p).update();
-                    ((Shelf)p).down = false;
+            }else {
+                if(p instanceof Bookcase){
+                    ((Bookcase)p).down = false;
                 }
-
-
+            }
+            if( p instanceof Bookcase){
+                ((Bookcase)p).update();
             }
         }
-
-
     }
     public Player getPlayer()
     {
