@@ -47,10 +47,11 @@ public class Couch
     public ArrayList<Sprite> getSprites()
     {
         ArrayList<Sprite> sprites = new ArrayList<Sprite>();
-        sprites.add(couch_mid);
+
         sprites.add(couch_back);
         sprites.add(couch_left);
         sprites.add(couch_right);
+        sprites.add(couch_mid);
         return sprites;
     }
 }
