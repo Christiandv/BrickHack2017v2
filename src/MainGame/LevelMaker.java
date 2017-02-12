@@ -76,7 +76,7 @@ public class LevelMaker {
         level.add(new Cookie(2605,125));
         level.addAll(new Chandelier(2550, 120).getSprites());
         level.add(new Stool(2520, 345));
-        level.add(new Cube(2815, 115));
+        level.add(new Cube(2815, 65));
         level.add(new Shelf(2800, 130));
         level.add(new Stool(2770, 345));
         level.add(new Bookcase(2965, 300));
@@ -97,7 +97,7 @@ public class LevelMaker {
         level.add(new Shelf(5200, 300));
         level.add(new Shelf(5400, 270));
         level.add(new Fridge(5500, 150));
-        level.add(new Pie(5525, 140));
+        level.add(new Pie(5525, 130));
 
 
 
