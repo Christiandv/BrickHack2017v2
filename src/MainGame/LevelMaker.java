@@ -18,6 +18,14 @@ public class LevelMaker {
         level.addAll( new Couch(10, 313).getSprites());
         level.addAll(new Chair(300,312).getSprites());
         level.addAll(new Chandelier(500, 240).getSprites());
+
+        Sprite fireball = new Sprite(700, 200);
+        fireball.loadImage("media/images/fireballTest.gif");
+        fireball.setImageDimensions();
+        fireball.hurts = true;
+        fireball.setHard();
+
+        level.add(fireball);
         return level;
     }
 
