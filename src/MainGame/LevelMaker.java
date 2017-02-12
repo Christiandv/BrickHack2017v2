@@ -32,6 +32,7 @@ public class LevelMaker {
         level.add(new Background(640,0));
         level.add(new Background(1280,0));
         level.add(new Background(1920,0));
+        level.add(new Background(2560, 0));
 
         //Begin hardcoding
         level.addAll(new Couch(10, 313).getSprites());
