@@ -45,6 +45,8 @@ public class GraphicsEngine extends JPanel implements ActionListener {
     private int HEIGHT;
     private final int DELAY = 30;
 
+    private int scroll = 0;
+
 
 
 
@@ -107,13 +109,13 @@ public class GraphicsEngine extends JPanel implements ActionListener {
         ArrayList<Sprite> sprites = physics.getSprites();
         for( Sprite p: sprites){
             if (p.isVisible()) {
-                g.drawImage(p.getImage(), p.getX(), p.getY(),
+                g.drawImage(p.getImage(), p.getX() - scroll, p.getY(),
                         this);
             }
         }
 
         if (player.isVisible()) {
-            g.drawImage(player.getImage(), player.getX(), player.getY(),
+            g.drawImage(player.getImage(), player.getX() - scroll, player.getY(),
                     this);
         }
 
@@ -138,7 +140,7 @@ public class GraphicsEngine extends JPanel implements ActionListener {
         inGame();
 
         physics.update();
-
+        scroll = physics.scroll;
         repaint();
     }
 
