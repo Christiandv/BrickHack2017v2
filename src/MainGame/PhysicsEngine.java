@@ -25,7 +25,7 @@ public class PhysicsEngine
     Player player;
     LevelMaker levelGen;
     boolean endGame = false;
-    int scroll = 0;
+    int scroll;
 
     ArrayList<Sprite> sprites;
 
@@ -35,11 +35,11 @@ public class PhysicsEngine
 
     public int playerScore;
 
-    private int chkX;
-    private int chkY;
+    public int chkX = 0;
+    public int chkY = 0;
 
-    private final int IPLAYER_X = 50;
-    private final int IPLAYER_Y = 313;
+    private int IPLAYER_X;
+    private int IPLAYER_Y;
     //platforms
     //enemies
     //powerups
@@ -159,6 +159,11 @@ public class PhysicsEngine
                         switch (type) {
                             case 0:
                                 //cube checkpoint code
+                                if (p.isVisible()) {
+                                    chkX = p.x;
+                                    chkY = p.y;
+                                }
+                                p.setVisible(false);
                                 break;
                             case 1:
                                 //cookie code
@@ -214,6 +219,16 @@ public class PhysicsEngine
 
     public void keyPressed(KeyEvent e) {
         player.keyPressed(e);
+    }
+
+    public void setPlayerX(int x)
+    {
+        IPLAYER_X = x;
+    }
+
+    public void setPlayerY(int y)
+    {
+        IPLAYER_Y = y;
     }
 
     public void keyReleased(KeyEvent e) {

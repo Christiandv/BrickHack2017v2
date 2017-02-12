@@ -67,7 +67,20 @@ public class GraphicsEngine extends JPanel implements ActionListener {
     private void initBoard() {
         setBackground(Color.BLACK);
         ingame = true;
-        physics = new PhysicsEngine();
+        PhysicsEngine physics2 = new PhysicsEngine();
+        if(physics != null && (physics.chkX != 0 || physics.chkY != 0))
+        {
+            physics2.setPlayerX(physics.chkX);
+            physics2.setPlayerY(physics.chkY);
+            physics2.scroll = physics.chkX-300;
+        }
+        else
+        {
+            physics2.setPlayerY(313);
+            physics2.setPlayerX(50);
+            physics2.scroll = 0;
+        }
+        physics = physics2;
         timer.start();
     }
 
