@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class PhysicsEngine {
     Player player;
     LevelMaker levelGen;
-
+    boolean endGame = false;
     int scroll = 0;
 
     ArrayList<Sprite> sprites;
@@ -66,6 +66,9 @@ public class PhysicsEngine {
         for(Sprite p : sprites){
             // you bee hitting a platform man
             if( p.getBounds().intersects(player.getBounds())){
+                if(p.hurts){
+                    endGame = true;
+                }
                 if(p.isHard()){// idk maybe we want passable platforms
                     xOff = player.width;
                     yOff = player.height;

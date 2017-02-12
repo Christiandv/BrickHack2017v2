@@ -1,16 +1,25 @@
+/*
+ * File: Chandelier.java
+ *
+ * The sprite and behavior for chandelier objects.
+ *
+ * @author Sebastian Serrano-Berthet : sas3897 (github)
+ * @author Christian Vaughan : christiandv (github)
+ * @author Josef Lenz : JosefLenz (github)
+ * @author Caitlin Barron : CaitlinBarron (github)
+ *
+ */
+
 package MainGame;
 
 import java.util.ArrayList;
 
-/**
- * Created by Caitlin on 2/11/2017.
- */
 public class Chandelier {
     Sprite ChandelierBase;
     Sprite ChandelierBar;
 
     public Chandelier(int x, int y){
-        ChandelierBase = new Sprite(x + 49, y - 27);
+        ChandelierBase = new Sprite(x - 21, y - 65);
         ChandelierBar = new Sprite(x, y + 46);
 
         ChandelierBase.hard = false;

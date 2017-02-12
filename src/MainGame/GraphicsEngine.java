@@ -141,6 +141,7 @@ public class GraphicsEngine extends JPanel implements ActionListener {
 
         physics.update();
         scroll = physics.scroll;
+        ingame = !physics.endGame;
         repaint();
     }
 
