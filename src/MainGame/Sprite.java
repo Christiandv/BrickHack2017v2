@@ -27,6 +27,7 @@ public class Sprite {
     public boolean hard;
     public boolean hurts;
 
+
     public Sprite(int x, int y) {
 
         this.x = x;

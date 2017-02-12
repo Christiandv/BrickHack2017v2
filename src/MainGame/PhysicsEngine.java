@@ -112,14 +112,14 @@ public class PhysicsEngine
                 if (p.isHard()) {// idk maybe we want passable platforms
                     xOff = player.width;
                     yOff = player.height;
-                    xOverLap = (player.x + player.width) - p.x;
-                    if (Math.abs(xOverLap) > Math.abs((p.x + p.width) - player.x)) {
-                        xOverLap = (p.x + p.width) - player.x;
+                    xOverLap = (player.x + player.width) - (int)p.getBounds().getX();
+                    if (Math.abs(xOverLap) > Math.abs(((int)p.getBounds().getX() + (int)p.getBounds().getWidth()) - player.x)) {
+                        xOverLap = ((int)p.getBounds().getX() + (int)p.getBounds().getWidth()) - player.x;
                         xOff = 0;
                     }
-                    yOverLap = (player.y + player.height) - p.y;
-                    if (Math.abs(yOverLap) > Math.abs((p.y + p.height) - player.y)) {
-                        yOverLap = (p.y + p.height) - player.y;
+                    yOverLap = (player.y + player.height) - (int)p.getBounds().getY();
+                    if (Math.abs(yOverLap) > Math.abs(((int)p.getBounds().getY() + (int)p.getBounds().getHeight()) - player.y)) {
+                        yOverLap = ((int)p.getBounds().getY() + (int)p.getBounds().getHeight()) - player.y;
                         yOff = 0;
                     }
                     if (Math.abs(xOverLap) < Math.abs(yOverLap)) {
@@ -128,7 +128,7 @@ public class PhysicsEngine
                             player.x = player.x + xOverLap;
                             player.dx = 0;
                         } else {
-                            player.x = p.x - player.width;
+                            player.x = (int)p.getBounds().getX() - player.width;
                             player.dx = 0;
                         }
                     } else {
@@ -137,7 +137,7 @@ public class PhysicsEngine
                             player.dy = 0;
                         } else {
                             // PLAYER LANDED ON TOP
-                            player.y = p.y - player.height;
+                            player.y = (int)p.getBounds().getY() - player.height;
                             player.landed();
                             if (p instanceof Bookcase) {
                                 ((Bookcase) p).down = 10;

@@ -13,6 +13,7 @@ public class Bookcase extends Sprite
         maxY = y;
         init();
     }
+
     public void update(){
         if(down>0) {
             y++;
