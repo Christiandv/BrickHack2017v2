@@ -14,7 +14,7 @@ public class Saucepan extends Powerup
     public void init(){
         hard = false;
         type = 4;
-        loadImage("media/images/pie.png");
+        loadImage("media/images/suacepan.png");
         setImageDimensions();
     }
 }
