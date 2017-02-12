@@ -13,7 +13,7 @@ public class Chandelier {
         ChandelierBase = new Sprite(x + 49, y - 27);
         ChandelierBar = new Sprite(x, y + 46);
 
-        ChandelierBase.hard = true;
+        ChandelierBase.hard = false;
         ChandelierBar.hard = true;
 
         ChandelierBase.loadImage("media/images/chandelier.png");
