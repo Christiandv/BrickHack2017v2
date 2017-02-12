@@ -32,6 +32,10 @@ public class LevelMaker {
         level.add(new Fireball(1400, 250));
         level.addAll(new BackwardChair(1430, 312).getSprites());
 
+        //First power-up time
+        level.add(new Stool(1650, 345));
+        level.add(new Saucepan(1665, 300));
+
         for(int i = 0; i < 10; i++){
             level.add(new Lava( i* 640, 399));
         }
