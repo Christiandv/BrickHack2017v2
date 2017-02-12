@@ -97,7 +97,7 @@ public class LevelMaker {
         level.add(new Shelf(5200, 300));
         level.add(new Shelf(5400, 270));
         level.add(new Fridge(5500, 150));
-        level.add(new Pie(5525, 130));
+        level.add(new Pie(5540, 120));
 
 
 
