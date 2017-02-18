@@ -18,10 +18,10 @@ import javax.swing.ImageIcon;
 
 public class Sprite {
 
-    protected int x;
-    protected int y;
-    protected int width;
-    protected int height;
+    public int x;
+    public int y;
+    public int width;
+    public int height;
     protected boolean vis;
     protected Image image;
     public boolean hard;
@@ -37,13 +37,13 @@ public class Sprite {
         hurts = false;
     }
 
-    protected void setImageDimensions() {
+    public void setImageDimensions() {
 
         width = image.getWidth(null);
         height = image.getHeight(null);
     }
 
-    protected void loadImage(String imageName) {
+    public void loadImage(String imageName) {
 
         ImageIcon ii = new ImageIcon(imageName);
         image = ii.getImage();
