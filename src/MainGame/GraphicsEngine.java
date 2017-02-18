@@ -216,7 +216,8 @@ public class GraphicsEngine extends JPanel implements ActionListener {
             int key = e.getKeyCode();
 
             if (key == KeyEvent.VK_ENTER && ingame == false) {
-               initBoard();
+                physics.song.stop();
+                initBoard();
             }
         }
     }
