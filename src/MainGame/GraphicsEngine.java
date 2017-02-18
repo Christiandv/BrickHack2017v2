@@ -73,12 +73,14 @@ public class GraphicsEngine extends JPanel implements ActionListener {
             physics2.setPlayerX(physics.chkX);
             physics2.setPlayerY(physics.chkY);
             physics2.scroll = physics.chkX-300;
+
         }
         else
         {
             physics2.setPlayerY(313);
             physics2.setPlayerX(50);
             physics2.scroll = 0;
+
         }
         physics = physics2;
         timer.start();
